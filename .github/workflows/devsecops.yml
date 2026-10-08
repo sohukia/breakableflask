@@ -12,9 +12,7 @@ jobs:
           docker run --rm \
           -v "$PWD":/project \
           -v "$HOME/.cache/trivy":/root/.cache/ \
-          aquasec/trivy:latest fs \
-          --file-patterns "pip:.*\.txt" \
-          /project
+          aquasec/trivy:latest fs /project/requirements.txt
 
   Dockerfile:
     runs-on: ubuntu-latest
